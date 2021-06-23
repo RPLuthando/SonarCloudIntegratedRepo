@@ -1,0 +1,3 @@
+form#reviewForm fieldset:not(:first-of-type),#review_submit, .hidden {
+    display: none;
+  }

@@ -240,4 +240,35 @@ class QuestionCatController extends Controller
              return $exception->getMessage();
         }
     }
+	
+	 */
+    public function Sonacloudtest_storage($survey_id){
+
+        try{
+
+            $responses = SurveyRemediationResponse::where('user_id',auth()->user()->id)->where('survey_id',$survey_id)->get();
+           
+            $ownerId = [];
+            foreach($responses as $res){
+
+                array_push($ownerId, $res->owner_id);
+                $res->saved=1;
+                $res->update();
+            }
+            $ownerValue = $ownerId['0']; 
+            
+            DB::table('survey_management_stages')
+            ->where('user_id', auth()->user()->id)
+            ->where('survey_id', $survey_id)
+            ->update(['stage_first' => 3]);
+             return view('admin.pages.dashboard.remediation.survey_thanks',compact('ownerValue'));
+
+        } catch (Exception $exception) {
+            
+            return $exception->getMessage();
+           
+        } catch (Throwable $exception) {
+             return $exception->getMessage();
+        }
+    }
 }

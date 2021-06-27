@@ -29,7 +29,7 @@ $(document).ready(function(){
                     $('#show_alert').css('display', 'block');
                     // console.log(res.message);
                 }
-               // You will get response from your PHP page (what you echo or print)
+               // You will get response from your PHP page (what you echo or print)/////
             },
             error: function(jqXHR, textStatus, errorThrown) {
                console.log(textStatus, errorThrown);

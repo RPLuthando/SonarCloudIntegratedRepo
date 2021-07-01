@@ -274,7 +274,7 @@ class QuestionCatController extends Controller
         }
     }
 	
-	 /*  method for test 5
+	 /*  method for test 6
     */
     public function Sonacloudtest5_storage($survey_id){
 

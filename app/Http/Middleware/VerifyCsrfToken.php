@@ -22,4 +22,9 @@ class VerifyCsrfToken extends Middleware
         //
         "upload"
     ];
+	
+	protected $except1 = [
+        //
+        "upload"
+    ];
 }

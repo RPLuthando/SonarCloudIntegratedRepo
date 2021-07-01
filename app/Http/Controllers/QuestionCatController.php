@@ -305,5 +305,6 @@ class QuestionCatController extends Controller
              return $exception->getMessage();
         }
     }
+		
 	
 }
